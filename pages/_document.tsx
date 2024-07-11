@@ -1,15 +1,11 @@
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
-import materialTheme, { roboto } from "../material-theme";
 
 export default class Document extends NextDocument {
   render() {
     return (
-      <Html lang="en" className={roboto.className}>
+      <Html lang="en">
         <Head>
-          <meta
-            name="theme-color"
-            content={materialTheme.palette.primary.main}
-          />
+          <meta name="theme-color" />
         </Head>
         <body>
           <Main />

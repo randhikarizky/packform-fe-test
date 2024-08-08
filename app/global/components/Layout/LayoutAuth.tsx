@@ -8,7 +8,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default function LayoutError(props: Props) {
+export default function LayoutAuth(props: Props) {
   const isDesktop = useResponsive("up", "md");
 
   return (
@@ -29,11 +29,8 @@ export default function LayoutError(props: Props) {
           content: "''",
           position: "absolute",
           backgroundSize: "cover",
-          opacity: 0.2,
-          filter: `blur(10px)`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center center",
-          backgroundImage: "url(/assets/background/mesjid_agung.jpg)",
+          opacity: 0.5,
+          backgroundColor: "primary.main",
         },
       }}
     >

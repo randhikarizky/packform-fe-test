@@ -4,18 +4,13 @@ import { useMemo } from "react";
 import merge from "lodash/merge";
 
 import CssBaseline from "@mui/material/CssBaseline";
-import {
-  createTheme,
-  ThemeOptions,
-  ThemeProvider as MuiThemeProvider,
-} from "@mui/material/styles";
+import { createTheme, ThemeOptions, ThemeProvider } from "@mui/material/styles";
 
 // system
 import { palette } from "./palette";
 import { shadows } from "./shadows";
 import { typography } from "./typography";
 // options
-import RTL from "./options/right-to-left";
 import { customShadows } from "./custom-shadows";
 import { componentsOverrides } from "./overrides";
 import { createContrast } from "./options/contrast";
@@ -57,14 +52,12 @@ export default function ThemeConfig({ children }: Props) {
 
   return (
     <NextAppDirEmotionCacheProvider options={{ key: "css" }}>
-      <MuiThemeProvider theme={theme}>
-        <RTL themeDirection={settings.themeDirection}>
-          <Snackbar>
-            <CssBaseline />
-            {children}
-          </Snackbar>
-        </RTL>
-      </MuiThemeProvider>
+      <ThemeProvider theme={theme}>
+        <Snackbar>
+          <CssBaseline />
+          {children}
+        </Snackbar>
+      </ThemeProvider>
     </NextAppDirEmotionCacheProvider>
   );
 }

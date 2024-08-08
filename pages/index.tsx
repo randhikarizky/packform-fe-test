@@ -9,8 +9,12 @@ const Index: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("");
-  }, []);
+    if (can()) {
+      router.push("/dashboard");
+    } else {
+      router.push("/auth/login");
+    }
+  }, [router.pathname, can()]);
 
   return <></>;
 };

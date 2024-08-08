@@ -4,7 +4,7 @@ import Cookies from "universal-cookie";
 
 const kue = new Cookies();
 
-const secretKey = `${process.env.NEXT_PUBLIC_ENCRYPT_STORAGE_SECRET_KEY}`;
+const secretKey = "undefined"; //`${process.env.NEXT_PUBLIC_ENCRYPT_STORAGE_SECRET_KEY}`;
 export const encryptStorage = {
   setItem(key: string, value: string): void {
     const encryptedValue = aes.encrypt(value, secretKey);

@@ -173,12 +173,3 @@ export const hideScroll = {
     },
   },
 } as const;
-
-// ----------------------------------------------------------------------
-
-export function pulseAnimation(color: number[], opacity: string) {
-  return {
-    boxShadow: `0 0 0 rgba(${color[0]}, ${color[1]}, ${color[2]}, ${opacity})`,
-    animation: "pulse 2s infinite",
-  };
-}

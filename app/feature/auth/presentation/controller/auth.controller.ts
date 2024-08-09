@@ -19,13 +19,12 @@ export const useLogin = () => {
       enqueueSnackbar("Login Success!", { variant: "success" });
       queryClient.invalidateQueries();
 
-      // router.push("/dashboard");
+      router.push("/dashboard");
     },
     onError: (error) => {
       queryClient.invalidateQueries();
 
       console.error(error);
-      // router.push("/dashboard");
     },
   });
 
@@ -43,13 +42,12 @@ export const useRegister = () => {
       enqueueSnackbar("Register Success!", { variant: "success" });
       queryClient.invalidateQueries();
 
-      // router.push("/dashboard");
+      router.push("/dashboard");
     },
     onError: (error) => {
       queryClient.invalidateQueries();
 
       console.error(error);
-      // router.push("/dashboard");
     },
   });
 
@@ -73,14 +71,12 @@ export const useLogout = () => {
       }
 
       router.push("/auth/login");
-      // router.push("/dashboard");
     },
     onError: (error) => {
       enqueueSnackbar("Logout Failed!", { variant: "error" });
       queryClient.invalidateQueries();
 
       console.error(error);
-      // router.push("/dashboard");
     },
   });
 

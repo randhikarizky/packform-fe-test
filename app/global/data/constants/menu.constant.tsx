@@ -7,6 +7,6 @@ export const menu: Menu[] = [
     title: "Dashboard",
     category: "Admin",
     path: "/dashboard",
-    icon: () => <Iconify icon="" />,
+    icon: () => <Iconify icon="lets-icons:chart-alt-duotone" />,
   },
 ];

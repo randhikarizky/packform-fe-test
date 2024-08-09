@@ -33,7 +33,7 @@ const AccountContainer = styled("div")(({ theme }) => ({
   alignItems: "center",
   padding: theme.spacing(2, 2.5),
   borderRadius: Number(theme.shape.borderRadius) * 1.5,
-  backgroundColor: alpha(theme.palette.grey[500], 0.12),
+  backgroundColor: alpha(theme.palette.primary.light, 0.12),
 }));
 
 const Sidebar = (props: Props) => {
@@ -75,30 +75,28 @@ const Sidebar = (props: Props) => {
       }}
     >
       <Box sx={{ mb: 5, mx: 2.5 }}>
-        <Link underline="none">
-          <AccountContainer>
-            <Avatar src={ProfilePictURL ?? ""} alt="photoURL" />
+        <AccountContainer>
+          <Avatar src={ProfilePictURL ?? ""} color="primary" alt="photoURL" />
 
-            <Box sx={{ pl: 2, pr: 4, width: "100%" }}>
-              <Typography
-                variant="subtitle2"
-                title={props.account?.name}
-                sx={{ color: "text.primary" }}
-              >
-                {props.account?.name}
-              </Typography>
+          <Box sx={{ pl: 2, pr: 4, width: "100%" }}>
+            <Typography
+              variant="subtitle2"
+              title={props.account?.name}
+              sx={{ color: "text.primary" }}
+            >
+              {props.account?.name}
+            </Typography>
 
-              <Typography
-                variant="body2"
-                sx={{ color: "text.secondary" }}
-                title={props.account?.email}
-                noWrap
-              >
-                {props.account?.email}
-              </Typography>
-            </Box>
-          </AccountContainer>
-        </Link>
+            <Typography
+              variant="body2"
+              sx={{ color: "text.secondary" }}
+              title={props.account?.email}
+              noWrap
+            >
+              {props.account?.email}
+            </Typography>
+          </Box>
+        </AccountContainer>
       </Box>
 
       <Stack

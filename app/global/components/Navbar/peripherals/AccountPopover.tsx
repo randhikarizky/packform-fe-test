@@ -73,6 +73,7 @@ export default function AccountPopover(props: Props) {
         <Avatar
           src={ProfilePictURL ?? ""}
           alt="photoURL"
+          color="primary"
           sx={{
             width: 36,
             height: 36,

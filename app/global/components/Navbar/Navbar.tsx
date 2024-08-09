@@ -17,6 +17,7 @@ import { useResponsive } from "../../hooks/useResponsive";
 import Iconify from "../Icon/iconify";
 import { bgBlur } from "@/assets/theme/css";
 import { User } from "../../interfaces/global.interface";
+import Logo from "../Logo/Logo";
 
 // ----------------------------------------------------------------------
 
@@ -56,35 +57,33 @@ const Navbar = (props: Props) => {
           px: { lg: 5 },
         }}
       >
-        <Box
-          sx={{
-            px: 2.5,
-            width: NAV_DESKTOP_WIDTH,
-          }}
-        >
-          <Typography variant="h6">GURILAP Admin</Typography>
-        </Box>
-
-        <IconButton
-          onClick={props.open}
-          sx={{
-            display: { lg: "none" },
-          }}
-        >
-          <Iconify icon="eva:menu-2-fill" />
-        </IconButton>
-        {/* <Searchbar /> */}
-        <Box sx={{ flexGrow: 1 }} />
-
         <Stack
-          flexGrow={1}
-          direction="row"
+          sx={{ flexGrow: 1 }}
+          direction={isDesktop ? "row" : "row-reverse"}
+          justifyContent="space-between"
           alignItems="center"
-          justifyContent="flex-end"
-          spacing={{ xs: 0.5, sm: 1 }}
         >
-          {/* <NotificationsPopover /> */}
-          <AccountPopover user={props.account} {...props} />
+          <IconButton
+            onClick={props.open}
+            sx={{
+              display: { lg: "none" },
+            }}
+          >
+            <Iconify icon="eva:menu-2-fill" />
+          </IconButton>
+          <Box
+            sx={{
+              px: isDesktop ? "unset" : 2.5,
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Logo size={isDesktop ? "medium" : "small"} />
+          </Box>
+
+          <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+            <AccountPopover user={props.account} {...props} />
+          </Box>
         </Stack>
       </Toolbar>
     </AppBar>
